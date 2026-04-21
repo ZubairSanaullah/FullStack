@@ -1,4 +1,6 @@
-import axios, { type AxiosResponse } from "axios";
+// import axios, { type AxiosResponse } from "axios";
+import axios from "axios"
+import type { AxiosResponse } from "axios"
 
 interface Todo {
     userId: number
