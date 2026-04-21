@@ -5,6 +5,7 @@ import { ChaiList } from './components/ChaiList.tsx'
 
 import type { Chai } from './types/types.ts'
 import { OrderForm } from './components/OrderForm.tsx'
+import { Card } from './components/Card.tsx'
 
 const chaiList: Chai[] = [
   {id: 1, name: "Masala Chai", price: 70, isSpecial: true},
@@ -35,6 +36,12 @@ function App() {
         }} 
       />
      </div>
+
+    <div>
+      <Card title='Chai aur TypeScript' footer={
+        <button>Buy Now</button>
+      }/>
+    </div>
     </>
   )
 }
