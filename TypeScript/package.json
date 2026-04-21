@@ -14,12 +14,16 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/ZubairSanaullah/FullStack/issues"
   },
   "homepage": "https://github.com/ZubairSanaullah/FullStack#readme",
   "devDependencies": {
+    "@types/axios": "^0.9.36",
     "typescript": "^6.0.2"
+  },
+  "dependencies": {
+    "axios": "^1.15.1"
   }
 }
