@@ -84,10 +84,10 @@ app.post("/notes", async (req, res) => {
 
 // To get all notes
 app.get("/notes", async (req, res) => {
-  //   const notes = await noteModel.find();
-  const notes = await noteModel.findOne({
-    title: "test_title",
-  });
+  const notes = await noteModel.find();
+  //   const notes = await noteModel.findOne({
+  //     title: "test_title",
+  //   });
 
   //   find => [{}, {}] or []
   //   findOne => {} or null
@@ -108,6 +108,25 @@ app.delete("/notes/:id", async (req, res) => {
 
   res.status(200).json({
     message: "Note deleted successfully",
+  });
+});
+
+// To update a note
+app.patch("/notes/:id", async (req, res) => {
+  const id = req.params.id;
+  const description = req.body.description;
+
+  await noteModel.findOneAndUpdate(
+    {
+      _id: id,
+    },
+    {
+      description: description,
+    },
+  );
+
+  res.status(200).json({
+    message: "Note updated successfully",
   });
 });
 
