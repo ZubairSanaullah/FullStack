@@ -50,6 +50,35 @@
 // module.exports = app
 
 const express = require("express");
+const noteModel = require("./models/note.model");
+
+/*
+
+APIs
+
+POST /notes - To create a note
+GET /notes - To get all notes
+DELETE /notes/:id - To delete a note
+PUT /notes/:id - To update a note
+
+*/
+
+// Middleware
+// To parse JSON data from request body
+app.use(express.json());
+
+app.post("/notes", async (req, res) => {
+  const data = req.body;
+
+  await noteModel.create({
+    title: data.title,
+    description: data.description,
+  });
+
+  res.status(201).json({
+    message: "Note created successfully",
+  });
+});
 
 const app = express();
 
