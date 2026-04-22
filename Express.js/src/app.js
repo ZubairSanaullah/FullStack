@@ -65,8 +65,10 @@ PUT /notes/:id - To update a note
 
 // Middleware
 // To parse JSON data from request body
+const app = express();
 app.use(express.json());
 
+// To create a note
 app.post("/notes", async (req, res) => {
   const data = req.body;
 
@@ -80,6 +82,33 @@ app.post("/notes", async (req, res) => {
   });
 });
 
-const app = express();
+// To get all notes
+app.get("/notes", async (req, res) => {
+  //   const notes = await noteModel.find();
+  const notes = await noteModel.findOne({
+    title: "test_title",
+  });
+
+  //   find => [{}, {}] or []
+  //   findOne => {} or null
+
+  res.status(200).json({
+    message: "Notes fetched successfully",
+    notes: notes,
+  });
+});
+
+// To delete a note
+app.delete("/notes/:id", async (req, res) => {
+  const id = req.params.id;
+
+  await noteModel.findOneAndDelete({
+    _id: id,
+  });
+
+  res.status(200).json({
+    message: "Note deleted successfully",
+  });
+});
 
 module.exports = app;

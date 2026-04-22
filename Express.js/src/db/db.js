@@ -7,7 +7,7 @@ async function connectDB() {
     console.log("Connecting to MongoDB...");
     // Using direct shard URLs to bypass local network DNS restrictions on SRV records
     await mongoose.connect(
-      "mongodb://zubi:2v0RCvDH52WeoeFz@ac-p5l4twr-shard-00-00.kugohby.mongodb.net:27017,ac-p5l4twr-shard-00-01.kugohby.mongodb.net:27017,ac-p5l4twr-shard-00-02.kugohby.mongodb.net:27017/?ssl=true&authSource=admin&retryWrites=true&w=majority",
+      "mongodb://zubi:2v0RCvDH52WeoeFz@ac-p5l4twr-shard-00-00.kugohby.mongodb.net:27017,ac-p5l4twr-shard-00-01.kugohby.mongodb.net:27017,ac-p5l4twr-shard-00-02.kugohby.mongodb.net:27017/?ssl=true&authSource=admin&retryWrites=true&w=majority/notes",
     );
     console.log("Database connected successfully");
   } catch (error) {
