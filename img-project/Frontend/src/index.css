@@ -61,3 +61,39 @@ body {
   width: 100%;
   cursor: pointer;
 }
+
+.feed-section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Feed */
+.feed-section .post-card {
+  margin-bottom: 10px;
+  width: 20rem;
+  height: 20rem;
+  border: 1px solid #0000001a;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 30px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.feed-section .post-card img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.feed-section .post-card p {
+  font-size: 17px;
+  font-family: 'Poppins', sans-serif;
+}
