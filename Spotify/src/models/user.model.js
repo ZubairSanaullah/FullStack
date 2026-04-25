@@ -20,9 +20,6 @@ const userSchema = new mongoose.Schema({
     enum: ["user", "artist"],
     default: "user",
   },
-  //   avatar: {
-  //     type: String,
-  //   },
 });
 
 const userModel = mongoose.model("user", userSchema);
