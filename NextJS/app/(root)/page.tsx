@@ -1,4 +1,4 @@
-import Hello from './components/hello'
+import Hello from '../components/hello'
 
 const Home = () => {
   console.log("Next JS is a framework for building web applications.")
